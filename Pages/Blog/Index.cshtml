@@ -10,7 +10,7 @@
     paging.currentPage = Model.currentPage;
     paging.UrlGenerator = (int? p) => Url.Page("/Blog/Index", new {p = p});
 }
-<partial name="_Paging" model="@paging"></partial>
+
 
 <h1>Index</h1>
 
@@ -55,3 +55,6 @@
 </tr>}
     </tbody>
 </table>
+
+
+<partial name="_Paging" model="@paging" />
