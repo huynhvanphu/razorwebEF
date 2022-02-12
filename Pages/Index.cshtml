@@ -1,12 +1,16 @@
 ﻿@page
 @model IndexModel
+
 @{
-    @*ViewData["Title"] = "Home page";*@
+    ViewData["Title"] = "Home page";
 }
 
-<ol>
+@*<p>@Url.Page("/Blog/Index", new { page = 5})</p>*@
+
+@*<ol>
     @foreach (var p in Model.posts)
     {
         <li>@p.Title</li>
     }
-</ol>
+</ol>*@
+
