@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace razorwebEF.Model
 {
-    public class BlogDbConText : IdentityDbContext
+    public class BlogDbConText : IdentityDbContext<AppUser>
     {
         public BlogDbConText(DbContextOptions options) : base(options) //Khai bao DI options de dang ky vao trong dich vu DI container
         {

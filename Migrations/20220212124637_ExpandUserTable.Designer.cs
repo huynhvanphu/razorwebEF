@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using razorwebEF.Model;
 
 namespace razorwebEF.Migrations
 {
     [DbContext(typeof(BlogDbConText))]
-    partial class BlogDbConTextModelSnapshot : ModelSnapshot
+    [Migration("20220212124637_ExpandUserTable")]
+    partial class ExpandUserTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

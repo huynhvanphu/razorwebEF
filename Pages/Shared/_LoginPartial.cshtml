@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using razorwebEF.Model
+
+@*Inject dich vu truc tiep vao razor page*@
+@inject SignInManager<AppUser> signInManager
+@inject UserManager<AppUser> userManager
+
+<ul class="navbar-nav">
+
+    @if (signInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a asp-area="Identity" asp-page="/Account/Manage/Index">Welcome @userManager.GetUserName(User)!</a>
+        </li>
+        <li class="nav-item">
+            <a asp-area="Identity" asp-page="/Account/Logout">Logout</a>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+        </li>
+        <li class="nav-item">
+            <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+        </li>
+    }
+
+</ul>
