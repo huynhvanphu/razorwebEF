@@ -80,10 +80,21 @@ namespace razorwebEF
                 // Cấu hình đăng nhập.
                 options.SignIn.RequireConfirmedEmail = true;            // Cấu hình xác thực địa chỉ email (email phải tồn tại)
                 options.SignIn.RequireConfirmedPhoneNumber = false;     // Xác thực số điện thoại
+                options.SignIn.RequireConfirmedAccount = true;
 
             });
 
+            services.ConfigureApplicationCookie(options =>
+            {
+                //Duong dan trang Login
+                options.LoginPath = "/Login/";
 
+                //Duong dan trang Logout
+                options.LogoutPath = "/Logout/";
+
+                //Duong dan den trang khi nguoi dung bi tu choi truy cap
+                options.AccessDeniedPath = "/Unauthorized/";
+            });
 
         }
 

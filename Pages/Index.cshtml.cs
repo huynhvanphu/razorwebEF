@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,8 @@ namespace razorwebEF.Pages
 
         private readonly BlogDbConText _blogDbConText;
 
+        public List<Article> posts { set; get; }
+
 
         public IndexModel(ILogger<IndexModel> logger, BlogDbConText blogDbConText)
         {
@@ -25,9 +28,9 @@ namespace razorwebEF.Pages
 
         public void OnGet()
         {
-            //posts = (from p in _blogDbConText.article
-            //         orderby p.CreatedDated descending
-            //         select p).ToList();
+            posts = (from p in _blogDbConText.article
+                     orderby p.CreatedDated descending
+                     select p).ToList();
         }
     }
 }

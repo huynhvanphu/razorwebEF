@@ -1,16 +1,17 @@
 ﻿@page
 @model IndexModel
+@using razorwebEF.Model
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<AppUser> usermanager
 
 @{
     ViewData["Title"] = "Home page";
 }
-
-@*<p>@Url.Page("/Blog/Index", new { page = 5})</p>*@
-
-@*<ol>
+<p>@usermanager.Options.SignIn.RequireConfirmedAccount</p>
+<ol>
     @foreach (var p in Model.posts)
     {
         <li>@p.Title</li>
     }
-</ol>*@
+</ol>
 
