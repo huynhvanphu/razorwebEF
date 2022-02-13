@@ -40,6 +40,7 @@ namespace razorwebEF
             //Dang ky Identity
             services.AddIdentity<AppUser, IdentityRole>()
                     .AddEntityFrameworkStores<BlogDbConText>()
+                    .AddDefaultUI()
                     .AddDefaultTokenProviders();
 
             //Su dung giao dien Identity UI Mac dinh
